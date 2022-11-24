@@ -1,0 +1,120 @@
+Project Submission
+FREE TRIAL:
+1 PROJECT LIMIT
+Have project questions? Ask a technical mentor or search for existing answers!
+
+ DUE DATE
+Nov 2
+
+ STATUS
+Not submitted
+
+Due at: Mon, Nov 2 1:45 pm
+
+Personal Blog Website
+This project requires you to utilize your HTML and CSS skills to build out a personal blog
+website, including custom images, layout, and styling. Along with webpage design considerations,
+to appropriately structure your files, as well as use proper CSS and HTML formatting & style.
+
+Project Files
+In this project, you'll get to start from scratch! To complete the project, you are able to 
+decide on the HTML and CSS files to include as part of your work, given that the end result 
+is within the confines of the project rubric provided below. This should include, at minimum,
+ HTML files related to:
+
+the blog website
+a blog post
+as well as any related CSS files for styling.
+
+Make sure to see the earlier section on Development Strategy if you are unsure how to get started.
+
+Rubric
+Your project will be evaluated by a Udacity code reviewer according to the Personal Blog
+ Website project rubric. Please make sure to re-review the rubric for detailed project
+  requirements prior to submission.
+
+Submission
+Once you've met all of the rubric requirements, you can submit your project as either a 
+zip file or a Github repository link below.
+
+
+
+
+xxxx
+HTML CSS JavaScript Git
+Udacity Git Commit Message Style Guide
+Introduction
+This style guide acts as the official guide to follow in your projects. Udacity evaluators
+ will use this guide to grade your projects. There are many opinions on the "ideal" style
+  in the world of development. Therefore, in order to reduce the confusion on what style 
+  students should follow during the course of their projects, we urge all students to refer 
+  to this style guide for their projects.
+
+Commit Messages
+Message Structure
+A commit messages consists of three distinct parts separated by a blank line: the title,
+ an optional body and an optional footer. The layout looks like this:
+
+type: subject
+
+body
+
+footer
+The title consists of the type of the message and subject.
+
+The Type
+The type is contained within the title and can be one of these types:
+
+feat: a new feature
+fix: a bug fix
+docs: changes to documentation
+style: formatting, missing semi colons, etc; no code change
+refactor: refactoring production code
+test: adding tests, refactoring test; no production code change
+chore: updating build tasks, package manager configs, etc; no production code change
+The Subject
+Subjects should be no greater than 50 characters, should begin with a capital letter and 
+do not end with a period.
+
+Use an imperative tone to describe what a commit does, rather than what it did. For example, 
+use change; not changed or changes.
+
+The Body
+Not all commits are complex enough to warrant a body, therefore it is optional and only used
+ when a commit requires a bit of explanation and context. Use the body to explain the what 
+ and why of a commit, not the how.
+
+When writing a body, the blank line between the title and the body is required and you
+ should limit the length of each line to no more than 72 characters.
+
+The Footer
+The footer is optional and is used to reference issue tracker IDs.
+
+Example Commit Message
+feat: Summarize changes in around 50 characters or less
+
+More detailed explanatory text, if necessary. Wrap it to about 72
+characters or so. In some contexts, the first line is treated as the
+subject of the commit and the rest of the text as the body. The
+blank line separating the summary from the body is critical (unless
+you omit the body entirely); various tools like `log`, `shortlog`
+and `rebase` can get confused if you run the two together.
+
+Explain the problem that this commit is solving. Focus on why you
+are making this change as opposed to how (the code explains that).
+Are there side effects or other unintuitive consequenses of this
+change? Here's the place to explain them.
+
+Further paragraphs come after blank lines.
+
+ - Bullet points are okay, too
+
+ - Typically a hyphen or asterisk is used for the bullet, preceded
+   by a single space, with blank lines in between, but conventions
+   vary here
+
+If you use an issue tracker, put references to them at the bottom,
+like this:
+
+Resolves: #123
+See also: #456, #789

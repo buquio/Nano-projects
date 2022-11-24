@@ -1,0 +1,143 @@
+
+The goal of the Front End Web Developer Nanodegree program is to equip learners with
+ the unique skills
+they need to build and develop a variety of websites and applications. 
+A graduate of this Nanodegree program will be able to:
+• Construct responsive websites using CSS, Flexbox and CSS Grid
+• Develop interactive websites and UI (User Interface) applications using JavaScript and HTML
+• Connect a web application to backend server data using JavaScript
+• Automate application build and deployment using Webpack
+• Improve offline performance of websites using Service Worker
+
+
+Prerequisite Knowledge: A well-prepared learner is able to:
+• Lay out a simple webpage using HTML
+• Style a website element using CSS
+• Write and test software with JavaScript
+• Inspect websites using Developer Tools on a modern web browser (Chrome, Firefox, or Edge)
+• Debug and troubleshoot errors and failures in JavaScript programs
+
+
+Course 1: CSS & Website Layout
+Learn how to effectively create the structure of a website using semantic HTML, 
+and style websites with CSS and responsive layouts. 
+Develop an understanding of different use cases for CSS Grid and Flexbox, and
+structure the layout of a web page using grid columns and rows.
+LEARNING OUTCOMES
+
+
+LESSON ONE Introduction to HTML
+• Create a programming project with a code editor
+• Construct nested websites with HTML tags and elements
+• Troubleshoot and debug HTML errors and bugs
+
+
+LESSON TWO Introduction to CSS
+• Style website components by ID, class and type
+• Connect CSS to a website
+• Position and display website elements
+• Modify and control website typography
+• Troubleshoot and debug issues with stylesheets
+
+
+LESSON THREE Introducing Flexbox
+• Control web elements orientation and layout with Flexbox
+• Control ordering of web elements with Flexbox
+• Align and justify web elements with Flexbox
+• Transform and resize web elements with Flexbox
+
+
+LESSON FOUR CSS Grid
+• Compare and contrast the use cases for CSS Grid and
+ Flexbox
+• Structure the layout of a web page using grid columns and
+ rows
+
+
+LESSON FIVE Creating Responsive
+Layouts
+• Define custom styles for different screen sizes using media
+ queries.
+• Observe and create breakpoints in a website to change
+ layout and styling as a page is resized
+
+
+Course Project
+Styled Blog Website
+For your first project, you’ll create a multi-page blog website, using
+best practices for content and page styling with HTML and CSS. You’ll
+practice using responsive layouts, Flexbox, and CSS Grid to create
+the structure and design for your own blog.
+Need Help? Speak with an Advisor: www.udacity.com/advisor Front End Web Developer | 4
+
+
+Course 2: JavaScript and the DOM
+Use JavaScript to control a webpage. Learn what the Document Object Model (DOM) is, 
+and use JavaScript
+and the DOM to dictate page content and interactions.Gain experience working with Browser Events
+ and managing website performance by controlling content creation efficiently.
+LEARNING OUTCOMES
+
+
+LESSON ONE 
+Syntax
+• Declare block-scoped variables using let and const
+• Format JavaScript strings using template literals
+• Manage arrays and objects using JavaScript destructuring
+ syntax
+• Iterate over arrays and objects using JavaScript for...of
+ syntax
+
+
+LESSON TWO 
+The Document Object Model
+• Describe and explain the Document Object Model for web
+ browsers
+• Access page elements by ID, class, and type using JavaScript
+
+
+LESSON THREE 
+Creating Content with JavaScript
+• Modify HTML content with JavaScript
+• Create HTML content and elements with JavaScript
+• Remove HTML content with JavaScript
+• Style HTML content with JavaScript and CSS
+
+
+LESSON FOUR 
+Working with Browser Events
+• Describe and explain the phases of browser events
+• Create event listeners that handle browser events by
+ writing code that runs when an event is triggered
+• Describe and explain the events that are fired as a web
+ page loads
+
+
+Course Project
+Dynamic Landing Page
+for Marketing Content
+
+
+In this project, you will build a multi-section landing page. Often
+times, you won’t know how much content will be added to a page
+through a Content Management System (CSM) or an API. To handle
+this problem, you will dynamically add content to a web page. You’ll
+be building a landing page that combines your skills with JavaScript,
+HTML, and CSS to update and control the page and create a dynamic
+user experience.
+Need Help? Speak with an Advisor: www.udacity.com/advisor Front End Web Developer | 5
+LEARNING OUTCOMES
+
+
+LESSON FIVE Performance
+• Manage website performance by controlling content
+ creation efficiently.
+• Describe what happens when a webpage has to be redrawn
+• Describe and explain the JavaScript call stack
+• Describe and explain the JavaScript event loop
+• Write efficient code by analyzing the call stack and event
+ loop
+• Delay code execution with setTimeout
+Need Help? Speak with an Advisor: www.udacity.com/advisor Front End Web Developer | 6
+
+

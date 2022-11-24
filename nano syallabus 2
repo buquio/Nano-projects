@@ -1,0 +1,109 @@
+Course 3: Web APIs and Asynchronous Applications
+Set up a Node and Express environment so you can develop web applications on your local machine,
+and learn to handle HTTP Requests & Routes. Update and modify website elements dynamically using
+asynchronously retrieved data.
+
+LEARNING OUTCOMES
+LESSON ONE Node & Express Environment
+• Set up a Node and Express environment to develop a web
+ application on your local machine
+• Install JavaScript packages using npm (Node Package
+ Manager)
+• Setup and run a local development server
+• Manage web application file structure and website assets
+ using Express
+
+LESSON TWO HTTP Requests & Routes
+• Handle requests to an Express with routes
+• Describe and explain the differences between GET and
+ POST requests
+• Build a web server and use it to serve data and responses
+ to web requests
+
+LESSON THREE Asynchronous JavaScript //SCRIMBA
+• Manage asynchronous JavaScript control flow with
+ Promises
+• Request data from a server using JavaScript Fetch
+• Update and modify website elements dynamically using
+ asynchronously retrieved data
+
+Course Project
+Weather Journal
+In this project, you’ll apply your new skills to combine data from
+the OpenWeatherMap API and client side (browser) HTML forms
+to create a web app that records a weather journal for users. This
+project requires you to create an asynchronous web app that uses
+Web API and user data to dynamically update the UI for a Weather
+Journal App.
+
+
+
+Course 4: Build Tools, Webpack, and Service Worker
+Develop an understanding of how to use build tools, such as Webpack, for automating build tasks. 
+Create CSS variables with Sass and configure Webpack to use Sass controlled stylesheets.
+Learn how to cache server data
+and website functionality using Service Worker.
+
+Course Project
+Article Analysis
+Website
+
+Course Project :
+Front End Web
+Developer Nanodegree
+Program Capstone
+In this project, you’ll get a taste of some common production
+environments and tools that you will likely come across in a front
+end developer role. You will be building a web tool that allows users
+to run Natural Language Processing (NLP) on articles or blogs found
+on other websites. Using an exciting new API called Aylien, you can
+build a simple web interface to interact with their NLP system. This
+tool will give back pertinent information about the article: whether
+the content is subjective (opinion) or objective (fact-based) and
+whether it is positive, neutral, or negative in tone.
+ For this project, you will use:
+• Node
+• Express
+• Aylien API
+• Webpack
+• Service Worker
+
+In the final project, you’ll combine all of the skills you’ve developed
+throughout the Nanodegree program to build an online travel app.
+You’ll work with data sources from multiple APIs to create a dynamic
+travel weather planning application that helps people plan trips by
+generating weather forecasts for the places they’re visiting.
+You’ll pull together all of the JavaScript, HTML, CSS, and build tool
+skills and knowledge you’ve gained to create this application. The
+design is up to you, and you’ll have the flexibility to include and
+combine other APIs (even your own!) to build this final project.
+Need Help? Speak with an Advisor: www.udacity.com/advisor Front End Web Developer | 8
+
+LEARNING OUTCOMES
+LESSON ONE Intro to Build Tools
+• Describe and explain the problems solved by using
+ automated build tools
+• Inspect and analyze the activity that occurs when loading a
+ web page in a browser
+• Describe and explain what Webpack is and how it can be
+ used
+
+LESSON TWO Basics of Webpack
+• Install Webpack to a computer
+• Configure webpack for automating build tasks
+• Define an entry point for a webpack bundle
+• Install and configure middleware for building an application
+• Extend Webpack functionality by installing plugins
+
+LESSON THREE Sass and Webpack
+• Describe and explain the benefits and use cases for Sass
+• Create CSS variables with Sass
+• Extend and nest CSS sheets and classes with Sass
+• Configure Webpack to use Sass controlled stylesheets
+
+LESSON FOUR Final Touches
+• Control variable and function scope with JavaScript IIFEs
+ (Immediately Invoked Function Expressions)
+• Optimize an application build pipeline with Webpack
+• Cache server data and websites functionality using Service
+ Worker

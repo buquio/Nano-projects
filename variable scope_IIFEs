@@ -1,0 +1,221 @@
+Variable Scope and IIFEs in Javascript
+Sanjucta Ghose
+Sanjucta Ghose
+Follow
+Sep 3, 2019 · 6 min read
+
+
+
+Image for post
+One of the most difficult things to wrap your head around when you come to Javascript from other programming languages is how variable scopes work in Javascript. Prior to ES6, there were just 2 kinds of scopes in Javascript.
+Global Scope
+Function Scope
+To declare a variable in ES5 you used the var keyword. If you declared your variable outside of any function then that variable had global scope and was available also within a function unless the same variable was declared again within the function.
+Note : You can paste the code snippets below into an online javascript editor like playcode.io and modify the code as you read along.
+var myVar = 10;
+console.log(myVar);
+function printVar()
+{
+  console.log(myVar);
+  myVar = 20;
+}
+printVar();
+console.log(myVar);
+The above code would print the following to the console.
+10
+10
+20
+-----------------------------------------------------
+xxxxx
+However, if I were to declare the same variable inside the function, then within the scope of that function it would override the variable in global scope.
+var myVar = 10;
+console.log(myVar);
+function printVar()
+{
+  var myVar = 20;
+  console.log(myVar);  
+}
+printVar();
+console.log(myVar);
+So the above code would print
+10
+20
+10
+-----------------------------------------------------------
+Now what would happen if I were to define a function within a function? Let’s look at that with an example.
+var myVar = 10;
+console.log("Here 1 :: "+myVar);
+function printVar()
+{
+  var myVar = 20;
+  console.log("Here 2 :: "+myVar);
+  function innerFunc()
+  {
+    myVar = 30;
+  }
+  innerFunc();
+  console.log("Here 3 :: "+myVar);  
+}
+printVar();
+console.log("Here 4 :: "+myVar);
+This prints
+'Here 1 :: 10'
+'Here 2 :: 20'
+'Here 3 :: 30'
+'Here 4 :: 10'
+So ‘innerFunc’ modifies the ‘myVar’ declared within the ‘printVar’ function. Let’s now look at another piece of code.
+------------------------------------------------------------------
+var myVar = 10;
+function outerFunction()
+{
+  var myVar = 20;
+  var innerFunc  = function()
+  {
+    myVar = 30;
+  }
+  return innerFunc;  
+}
+var functionVar = outerFunction();
+functionVar();
+console.log("Here  :: "+myVar);
+The output of the above snippet is
+'Here  :: 10'
+In the code snippet above, ‘outerFunction’ returns the function ‘innerFunction’, which modifies the ‘myVar’ variable. Since this function is called from outside the function ‘outerFunction’, you might expect it to modify the ‘myVar’ variable in global scope. But that is not what happens. The ‘myVar’ variable in global scope remains unchanged. This is because Javascript has what is known as ‘lexical scoping’ . Basically what this means is that when a variable is referred to within a function, the Javascript engine first checks whether the variable has been declared in the local scope i.e. within the function. If not, it looks for the variable in the local scope of the function within which the function was defined and not the function within which it was called. 
+-----------------------------------------------------------------
+This becomes clearer if you look at the code below :
+var myVar = 10;
+function outerFunc()
+{
+  var myVar = 20;
+  var innerFunc = function()
+  {
+    console.log("myVar is:: "+myVar);
+  }
+  return innerFunc;
+}
+function callingFunc()
+{
+  var myVar = 30;
+  var printVar = outerFunc();
+  printVar();
+}
+callingFunc();
+The output of the above snippet is
+'myVar is:: 20'
+To understand why this happens, we need to understand the concept of ‘Execution Context’ . The execution context is an abstraction for the environment in which a line of code is being executed.
+The javascript engine creates a global execution context when it starts executing the code. Whenever a function definition is encountered during execution, a new function is created and this function keeps a reference to the current execution context.This execution context becomes the outer scope, so to speak, when that function is called. For example, outerFunc and callingFunc both keep a reference to the global execution context.
+Whenever a function call is encountered ( for example when callingFunction is called in the last line of the snippet above ) a new execution context is created and becomes the current execution context till the function returns. If a function definition is encountered during execution of this function, the newly defined function keeps a reference to the current execution context as its outer scope. So in the example above, since the definition of innerFunc is encountered when outerFunc is executing, innerFunc keeps a reference to the execution context created when outerFunc is called.
+Image for post
+When ‘innerFunction’(referred to by the ‘printVar’ variable) is called , a new execution context is created. When the Javascript engine encounters the line
+console.log("myVar is:: "+myVar);
+it looks for the variable myVar in the current execution context. Since myVar is not available in the current execution context, it looks for the variable in the execution context which was active when the printVar(alias innerFunc) was defined which is the one created in step 5 in the diagram above. This execution context contains a myVar whose value gets printed. If myVar was not available in this execution context it would look in the execution context which was active when ‘outerFunc’ was defined, which is the global execution context.
+
+Lexical scoping in Javascript results in what could seem like unexpected behaviour. Consider the code snippet below.
+var funcArr = [];
+for ( var i = 0; i < 10; i++ )
+{
+  funcArr[i] = function printI()
+  {    
+    console.log(i);    
+  }
+}
+for ( var j = 0; j < 10; j++  )
+{
+  funcArr[j]();
+}
+At first glance, it may seem that the output of the above snipet would be the numbers 0 to 9, printed one on each line. The actual output is
+10
+10
+10
+10
+10
+10
+10
+10
+10
+10
+xxxxThis is because each time the function printI is defined, the current execution context, which is the global execution context, becomes the outer scope for the function. When the functions are called in a loop, each one prints out i in the global execution context whose value is now 10.
+So how do we achieve the expected behaviour which is that funcArr[0] prints 0, funcArr[1] prints 1 and so on ? This is where IIFEs come to the rescue. IIFE stands for Immediately Invoked Function Expression. An IIFE is a function expression enclosed in parentheses and followed by a pair of parentheses. This is what an IIFE looks like
+(function ()
+{
+      console.log("In IIFE");
+})()
+The output of the above snippet would be
+'In IIFE'
+xxxWhat is hapenning here is that the Javascript engine creates a function expression and invokes it right away.
+Let’s rewrite the assignment of functions to array items using IIFEs.
+var funcArr = [];
+for ( var i = 0; i < 10; i++ )
+{
+  funcArr[i] = (function (i) { //IIFE function
+    return function printI()
+              {    
+                console.log(i);    
+              }
+          })(i);
+}
+for ( var j = 0; j < 10; j++ )
+{
+  funcArr[j]();
+}
+--------------------------------------------------------------------
+xxxBy using an IIFE, we are creating a new execution context for each iteration of the first loop, within which the function printI is defined. When i = 0, the IIFE is passed a value of 0 which becomes the value of i in the execution context that is created when the IIFE is executed.
+____________________________________________________________________________________
+Once the IIFE returns, this value of i cannot be changed anymore as the execution context is exited but the function created within the IIFE retains a reference to the ‘i’ variable (whose value is 0) which is passed as a parameter to the IIFE.
+ES6 introduces 2 new ways of declaring variables
+let
+const
+Both of these variables have ‘block scope’ meaning they are only visible within the block in which they are declared. Let’s look at an example.
+var i = 100;
+for(let i = 0; i < 10; i++)
+{
+  console.log(i);
+}
+console.log("i after loop: "+i);
+The output of the above snippet would be
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+'i after loop: 100'
+So as we can see, the variable i declared within the for loop does not affect the ‘i’ in global scope. This does away with the need for IIFEs. We could rewrite the example of assigning functions to array members like this.
+var funcArr = [];
+for ( let i = 0; i < 10; i++ )
+{
+  funcArr[i] = function printI()
+  {    
+    console.log(i);    
+  }
+}
+for (var   j = 0; j < 10; j++  )
+{
+  funcArr[j]();
+}
+We simply replace the var in the first for loop with a let and voilà, the output is as we expect it to be without requiring IIFEs or any other hard to understand mechanism.
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+To summarize,
+Variables declared with the ‘var’ keyword have ‘function’ scope or lexical scope which can lead to some unexpected behaviour
+IIFEs can take care of the unexpected behaviour by creating a new execution context when required
+ES6 introduces the keywords ‘let’ and ‘const’ which allow variables to be declared with ‘block’ scope.
+brandsoft
+A Technology Publication
+Follow
+13
+
+JavaScript
+13 claps
